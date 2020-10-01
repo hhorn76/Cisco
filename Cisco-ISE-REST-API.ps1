@@ -33,7 +33,7 @@ $objIse.sessionCount.count
 $objIse = connectToApi '/admin/API/mnt/Session/PostureCount'
 $objIse.sessionCount.count
 
-#Lists the number of active Profiler service sessions.
+# Lists the number of active Profiler service sessions.
 $objIse = connectToApi '/admin/API/mnt/Session/ProfilerCount'
 $objIse.sessionCount.count
 
@@ -49,7 +49,7 @@ $objIse = connectToApi "/admin/API/mnt/Session/AuthList/$strfrom/$strto"
 $objIse.activeList
 
 #starttime/endtime
-$strfrom = 
+$strfrom = ((Get-Date).AddMinutes(-5)).ToString('yyyy-MM-dd HH:mm:ss')
 $strTo = 'null'
 $objIse = connectToApi "/admin/API/mnt/Session/AuthList/$strfrom/$strto"
 $objIse.activeList.activeSession
@@ -61,7 +61,7 @@ $objIse = connectToApi "/admin/API/mnt/Session/AuthList/$strfrom/$strto"
 $objIse.activeList.activeSession
 
 # Searches the database for the latest session that contains the specified MAC address.
-$strMac = '30:35:AD:A6:10:D4'
+$strMac = 'XX:XX:XX:XX:XX:XX'
 $objIse = connectToApi "/admin/API/mnt/Session/MACAddress/$strMac"
 $objIse.sessionParameters
 
@@ -71,12 +71,12 @@ $objIse = connectToApi "/admin/API/mnt/Session/UserName/$strUser"
 $objIse.sessionParameters
 
 # Searches the database for the latest session that contains the specified NAS IP address (IPv4 or IPv6 address).
-$strIp = '172.16.50.4'
+$strIp = 'XXX.XXX.XXX.XXX'
 $objIse = connectToApi "/admin/API/mnt/Session/IPAddress/$strIp"
 $objIse.sessionParameters
 
 # Searches the database for the latest session that contains the specified audit session ID.
-$strId = 'ac10320400029c2c5f74bf25'
+$strId = '<session id>'
 $objIse = connectToApi "/admin/API/mnt/Session/Active/SessionID/$strId/0"
 $objIse.activeSessionList.activeSession
 
